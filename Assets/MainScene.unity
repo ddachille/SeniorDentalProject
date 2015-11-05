@@ -95,7 +95,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 84429915}
-  - 114: {fileID: 84429914}
   m_Layer: 0
   m_Name: globalScript
   m_TagString: Untagged
@@ -103,17 +102,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &84429914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 84429913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e66d62940cbb1af49806d90acf6f298a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &84429915
 Transform:
   m_ObjectHideFlags: 0
@@ -266,6 +254,7 @@ GameObject:
   - 114: {fileID: 839862258}
   - 114: {fileID: 839862257}
   - 114: {fileID: 839862256}
+  - 114: {fileID: 839862260}
   m_Layer: 0
   m_Name: Colored Cubes Volume
   m_TagString: Untagged
@@ -325,6 +314,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!114 &839862260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 839862255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e66d62940cbb1af49806d90acf6f298a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1975212278
 GameObject:
   m_ObjectHideFlags: 0

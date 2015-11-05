@@ -13,7 +13,7 @@ public class ClickToDestroy : MonoBehaviour
 	// individual pieces do, but not the parent). So we define a click as the mouse being down
 	// but not being down on the previous frame. We'll fix this better in the future...
 
-	//DD- we want to change that it is continuous possibly. maybe later after we get one down.
+	//DD- we want to change that it is continuous though, so we do use onMouseDown
 	//private bool isMouseAlreadyDown = false;
 
 	// Use this for initialization

@@ -15,18 +15,41 @@ public class TrackingGlobalVars : MonoBehaviour {
 	public static uint deletedDarkYellow = 0;
 	public static uint deletedYellow = 0;
 
+	//the volumedata held in here
+	private ColoredCubesVolume coloredCubesVol;
 
-
-
-
+	
 
 	// Use this for initialization
 	void Start () {
+		//Save Tooth GameObject into the volume variable to access 
+		coloredCubesVol = gameObject.GetComponent<ColoredCubesVolume>();
 
+		//Save Region as a variable to access outer corners of array
+		Region theWholeRegion = coloredCubesVol.data.enclosingRegion;
+		//Debug.Log (theWholeRegion.lowerCorner.x); and y..z...and uppercorner etc.
+
+		//loop through an array of the enclosing region to figure out total numbers of certain colors.
+		for (int arrayX = theWholeRegion.lowerCorner.x; arrayX <= theWholeRegion.upperCorner.x; arrayX++) {
+			for(int arrayY = theWholeRegion.lowerCorner.y; arrayY <= theWholeRegion.upperCorner.y; arrayY++){
+				for(int arrayZ = theWholeRegion.lowerCorner.z; arrayZ <= theWholeRegion.upperCorner.z; arrayZ++){
+					//save currentVoxel we are on's color
+					QuantizedColor currentColor = coloredCubesVol.data.GetVoxel(arrayX,arrayY,arrayZ);
+
+					//test the colorS
+					if(currentColor.red == 248 && currentColor.green == 252 && currentColor.blue == 248){
+						totalWhite++;
+					}
+
+				}
+			}
+		}
+		Debug.Log ("TOTAL WHITE");
+		Debug.Log (totalWhite);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
 }
