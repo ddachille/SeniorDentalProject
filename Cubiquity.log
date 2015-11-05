@@ -1,16 +1,21 @@
 ********************************************************************************
 *                             Initializing Cubiquity                           *
 ********************************************************************************
-[21:33:05, Info   ]: Creating voxel database from 'C:/Users/Diandra/Desktop/FinalNew/Assets/StreamingAssets/Cubiquity/VoxelDatabases/tooth.vdb'
-[21:34:39, Info   ]: Creating voxel database from 'C:/Users/Diandra/Desktop/FinalNew/Assets/StreamingAssets/Cubiquity/VoxelDatabases/tooth.vdb'
-[21:34:52, Info   ]: Resizing compressed data buffer to 144307bytes. This should only happen once
-[21:34:52, Info   ]: Creating voxel database from 'C:/Users/Diandra/Desktop/FinalNew/Assets/StreamingAssets/Cubiquity/VoxelDatabases/tooth.vdb'
-[22:33:26, Info   ]: Creating voxel database from 'C:/Users/Diandra/Desktop/FinalNew/Assets/StreamingAssets/Cubiquity/VoxelDatabases/tooth.vdb'
-[22:56:16, Info   ]: Creating voxel database from 'C:/Users/Diandra/Desktop/FinalNew/Assets/StreamingAssets/Cubiquity/VoxelDatabases/tooth.vdb'
-[22:56:53, Info   ]: Creating voxel database from 'C:/Users/Diandra/Desktop/FinalNew/Assets/StreamingAssets/Cubiquity/VoxelDatabases/tooth.vdb'
-[22:57:10, Info   ]: Creating voxel database from 'C:/Users/Diandra/Desktop/FinalNew/Assets/StreamingAssets/Cubiquity/VoxelDatabases/tooth.vdb'
-[23:02:37, Info   ]: Creating voxel database from 'C:/Users/Diandra/Desktop/FinalNew/Assets/StreamingAssets/Cubiquity/VoxelDatabases/tooth.vdb'
-[23:13:10, Info   ]: Creating voxel database from 'C:/Users/Diandra/Desktop/FinalNew/Assets/StreamingAssets/Cubiquity/VoxelDatabases/tooth.vdb'
-[23:16:58, Info   ]: Creating voxel database from 'C:/Users/Diandra/Desktop/FinalNew/Assets/StreamingAssets/Cubiquity/VoxelDatabases/tooth.vdb'
-[23:17:00, Info   ]: Creating voxel database from 'C:/Users/Diandra/Desktop/FinalNew/Assets/StreamingAssets/Cubiquity/VoxelDatabases/tooth.vdb'
-[23:18:31, Info   ]: Creating voxel database from 'C:/Users/Diandra/Desktop/FinalNew/Assets/StreamingAssets/Cubiquity/VoxelDatabases/tooth.vdb'
+[23:54:51, Info   ]: Creating voxel database from 'C:/Users/Amanda/Documents/GitHub/SeniorDentalProject/Assets/StreamingAssets/Cubiquity/VoxelDatabases/tooth.vdb'
+[00:24:25, Info   ]: Creating voxel database from 'C:/Users/Amanda/Documents/GitHub/SeniorDentalProject/Assets/StreamingAssets/Cubiquity/VoxelDatabases/decay_model.vdb'
+[00:24:50, Info   ]: Creating voxel database from 'C:/Users/Amanda/Documents/GitHub/SeniorDentalProject/Assets/StreamingAssets/Cubiquity/VoxelDatabases/decay_model.vdb'
+[00:25:31, Info   ]: Creating voxel database from 'C:/Users/Amanda/Documents/GitHub/SeniorDentalProject/Assets/StreamingAssets/Cubiquity/VoxelDatabases/decay_model.vdb'
+[00:25:34, Info   ]: Creating voxel database from 'C:/Users/Amanda/Documents/GitHub/SeniorDentalProject/Assets/StreamingAssets/Cubiquity/VoxelDatabases/decay_model.vdb'
+[00:26:02, Info   ]: Resizing compressed data buffer to 144307bytes. This should only happen once
+[00:26:03, Info   ]: Creating voxel database from 'C:/Users/Amanda/Documents/GitHub/SeniorDentalProject/Assets/StreamingAssets/Cubiquity/VoxelDatabases/decay_model.vdb'
+[00:26:07, Info   ]: Creating voxel database from 'C:/Users/Amanda/Documents/GitHub/SeniorDentalProject/Assets/StreamingAssets/Cubiquity/VoxelDatabases/decay_model.vdb'
+[00:26:48, Info   ]: Creating voxel database from 'C:/Users/Amanda/Documents/GitHub/SeniorDentalProject/Assets/StreamingAssets/Cubiquity/VoxelDatabases/decay_model.vdb'
+[00:26:57, Info   ]: Creating voxel database from 'C:/Users/Amanda/Documents/GitHub/SeniorDentalProject/Assets/StreamingAssets/Cubiquity/VoxelDatabases/decay_model.vdb'
+[00:29:58, Info   ]: Resizing compressed data buffer to 144307bytes. This should only happen once
+[00:29:58, Info   ]: Creating voxel database from 'C:/Users/Amanda/Documents/GitHub/SeniorDentalProject/Assets/StreamingAssets/Cubiquity/VoxelDatabases/decay_model.vdb'
+[00:30:01, Info   ]: Creating voxel database from 'C:/Users/Amanda/Documents/GitHub/SeniorDentalProject/Assets/StreamingAssets/Cubiquity/VoxelDatabases/decay_model.vdb'
+[00:31:15, Info   ]: Resizing compressed data buffer to 144307bytes. This should only happen once
+[00:31:15, Info   ]: Creating voxel database from 'C:/Users/Amanda/Documents/GitHub/SeniorDentalProject/Assets/StreamingAssets/Cubiquity/VoxelDatabases/decay_model.vdb'
+[00:32:19, Info   ]: Creating voxel database from 'C:/Users/Amanda/Documents/GitHub/SeniorDentalProject/Assets/StreamingAssets/Cubiquity/VoxelDatabases/decay_model.vdb'
+[00:32:52, Info   ]: Resizing compressed data buffer to 144307bytes. This should only happen once
+[00:32:52, Info   ]: Creating voxel database from 'C:/Users/Amanda/Documents/GitHub/SeniorDentalProject/Assets/StreamingAssets/Cubiquity/VoxelDatabases/decay_model.vdb'

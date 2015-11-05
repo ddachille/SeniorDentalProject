@@ -37,7 +37,7 @@ public class TrackingGlobalVars : MonoBehaviour {
 					QuantizedColor currentColor = coloredCubesVol.data.GetVoxel(arrayX,arrayY,arrayZ);
 
 					//test the colorS
-					if(currentColor.red == 248 && currentColor.green == 252 && currentColor.blue == 248){
+					if(currentColor.red == 248 && currentColor.green == 252 && currentColor.blue == 200){
 						totalWhite++;
 					}
 
