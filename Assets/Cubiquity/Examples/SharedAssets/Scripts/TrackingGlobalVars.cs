@@ -6,7 +6,7 @@ public class TrackingGlobalVars : MonoBehaviour {
 	//Global variables that will keep the count of all total voxels in the array
 	public static uint totalWhite = 0;
 	public static uint totalBrown = 0; 
-	public static uint totalDarkYellow = 0;
+	public static uint totalBlack = 0;
 	public static uint totalYellow = 0;
 
 	//Global variables that will increase every time a voxel of the color is deleted
@@ -37,14 +37,27 @@ public class TrackingGlobalVars : MonoBehaviour {
 					QuantizedColor currentColor = coloredCubesVol.data.GetVoxel(arrayX,arrayY,arrayZ);
 
 					//test the colorS
-					if(currentColor.red == 248 && currentColor.green == 252 && currentColor.blue == 248){
+					if(currentColor.red == 248 && currentColor.green == 252 && currentColor.blue == 200){
 						totalWhite++;
+					}else if(currentColor.red == 24 && currentColor.green == 20 && currentColor.blue == 8){
+						totalBlack++;
+					}else if(currentColor.red == 112 && currentColor.green == 28 && currentColor.blue == 0){
+						totalBrown++;
+					}else if(currentColor.red == 152 && currentColor.green == 152 && currentColor.blue == 0){
+						totalYellow++;
+					}else{
 					}
 
 				}
 			}
 		}
-		Debug.Log ("TOTAL WHITE");
+		Debug.Log ("TOTAL YELLOW");
+		Debug.Log (totalYellow);
+		Debug.Log ("TOTAL BROWN");
+		Debug.Log (totalBrown);
+		Debug.Log ("TOTAL BLACK");
+		Debug.Log (totalBlack);
+		Debug.Log ("TOTAL White");
 		Debug.Log (totalWhite);
 	}
 	
