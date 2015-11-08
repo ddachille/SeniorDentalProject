@@ -14,7 +14,7 @@ public class ClickToDestroy : MonoBehaviour
 	// but not being down on the previous frame. We'll fix this better in the future...
 
 	//DD- we want to change that it is continuous though, so we do use onMouseDown
-	//private bool isMouseAlreadyDown = false;
+
 
 	// Use this for initialization
 	void Start()
@@ -40,8 +40,7 @@ public class ClickToDestroy : MonoBehaviour
 		// then we consider this a click, and do our destruction.
 		if(Input.GetMouseButton(0))
 		{
-			//if(!isMouseAlreadyDown)
-			//{
+
 				// Build a ray based on the current mouse position
 				Vector2 mousePos = Input.mousePosition;
 				Ray ray = Camera.main.ScreenPointToRay(new Vector3(mousePos.x, mousePos.y, 0));
@@ -63,9 +62,7 @@ public class ClickToDestroy : MonoBehaviour
 					DestroyVoxels(pickResult.volumeSpacePos.x, pickResult.volumeSpacePos.y, pickResult.volumeSpacePos.z, range);
 				}
 				
-				// Set this flag so the click won't be processed again next frame.
-				//isMouseAlreadyDown = true;
-			//}
+
 		}
 		else
 		{
@@ -138,11 +135,23 @@ public class ClickToDestroy : MonoBehaviour
 						// Get the current color of the voxel
 						QuantizedColor color = coloredCubesVolume.data.GetVoxel(x, y, z);				
 						//WHAT IS THE COLOR!!!!!!!!!
-						Debug.Log ("here is the COLOR!!!!!!!");
-						Debug.Log (color.red);
-						Debug.Log (color.green);
-						Debug.Log (color.blue);
-						Debug.Log (TrackingGlobalVars.totalWhite);
+						//Debug.Log ("here is the COLOR!!!!!!!");
+						//Debug.Log (color.red);
+						//Debug.Log (color.green);
+						//Debug.Log (color.blue);
+
+						if(color.red == 248 && color.green == 252 && color.blue == 200){
+							TrackingGlobalVars.deletedWhite++;
+						}else if(color.red == 24 && color.green == 20 && color.blue == 8){
+							TrackingGlobalVars.deletedBlack++;
+						}else if(color.red == 112 && color.green == 28 && color.blue == 0){
+							TrackingGlobalVars.deletedBrown++;
+						}else if(color.red == 152 && color.green == 152 && color.blue == 0){
+							TrackingGlobalVars.deletedYellow++;
+						}else{
+						}
+
+						//Debug.Log (TrackingGlobalVars.totalWhite);
 
 						// Check the alpha to determine whether the voxel is visible. 
 						if(color.alpha > 127)

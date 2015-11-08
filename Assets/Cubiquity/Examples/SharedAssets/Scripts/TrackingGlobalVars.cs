@@ -12,8 +12,8 @@ public class TrackingGlobalVars : MonoBehaviour {
 	//Global variables that will increase every time a voxel of the color is deleted
 	public static uint deletedWhite = 0;
 	public static uint deletedBrown = 0;
-	public static uint deletedDarkYellow = 0;
 	public static uint deletedYellow = 0;
+	public static uint deletedBlack = 0;
 
 	//the volumedata held in here
 	private ColoredCubesVolume coloredCubesVol;
@@ -51,18 +51,20 @@ public class TrackingGlobalVars : MonoBehaviour {
 				}
 			}
 		}
-		Debug.Log ("TOTAL YELLOW");
-		Debug.Log (totalYellow);
-		Debug.Log ("TOTAL BROWN");
-		Debug.Log (totalBrown);
-		Debug.Log ("TOTAL BLACK");
-		Debug.Log (totalBlack);
-		Debug.Log ("TOTAL White");
-		Debug.Log (totalWhite);
+		//Debug.Log ("TOTAL YELLOW");
+		//Debug.Log ((deletedYellow/totalYellow)*100);
+		//Debug.Log ("TOTAL BROWN");
+		//Debug.Log (totalBrown);
+		//Debug.Log ("TOTAL BLACK");
+		//Debug.Log (totalBlack);
+		//Debug.Log ("TOTAL White");
+		//Debug.Log (totalWhite);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
+		//this is where we will update scores if we are showing them on the screen.
+		Debug.Log ("TOTAL YELLOW");
+		Debug.Log (((float)deletedYellow/totalYellow)*100);
 	}
 }
