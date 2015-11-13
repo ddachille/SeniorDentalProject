@@ -14,6 +14,11 @@ public class TrackingGlobalVars : MonoBehaviour {
 	public static uint deletedBrown = 0;
 	public static uint deletedYellow = 0;
 	public static uint deletedBlack = 0;
+	
+	public static double truncatedYellow = 0;
+	public static double truncatedBrown = 0;
+	public static double truncatedBlack = 0;
+	public static double truncatedWhite = 0;
 
 	//the volumedata held in here
 	private ColoredCubesVolume coloredCubesVol;
@@ -64,7 +69,30 @@ public class TrackingGlobalVars : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//this is where we will update scores if we are showing them on the screen.
-		Debug.Log ("TOTAL YELLOW");
-		Debug.Log (((float)deletedYellow/totalYellow)*100);
+		Debug.Log ("YELLOW: " + ((float)deletedYellow/totalYellow)*100 + " | Truncated: " + (System.Math.Truncate((double)(((float)deletedYellow/totalYellow)*100)*100.0) / 100.0) + "%");
+		Debug.Log ("BROWN: " + ((float)deletedBrown/totalBrown)*100 + " | Truncated: " + (System.Math.Truncate((double)(((float)deletedBrown/totalBrown)*100)*100.0) / 100.0) + "%");
+		Debug.Log ("BLACK: " + ((float)deletedBlack/totalBlack)*100 + " | Truncated: " + (System.Math.Truncate((double)(((float)deletedBlack/totalBlack)*100)*100.0) / 100.0) + "%");
+		Debug.Log ("WHITE: " + ((float)deletedWhite/totalWhite)*100 + " | Truncated: " + (System.Math.Truncate((double)(((float)deletedWhite/totalWhite)*100)*100.0) / 100.0) + "%");
+		//Debug.Log ("Total YELLOW: " + (totalYellow) + " |  Deleted YELLOW: " + (deletedYellow));
+		//Debug.Log ("Total BROWN: " + (totalBrown) + " |  Deleted BROWN: " + (deletedBrown));
+		//Debug.Log ("Total BLACK: " + (totalBlack) + " |  Deleted BLACK: " + (deletedBlack));
+		//Debug.Log ("BROWN: " + ((float)deletedBrown/totalBrown)*100);
+		//Debug.Log ("BLACK: " + ((float)deletedBlack/totalBlack)*100);
+		//Debug.Log ("WHITE: " + ((float)deletedWhite/totalWhite)*100);
 	}
+	
+	void OnGUI()
+		{
+		  truncatedYellow = (System.Math.Truncate((double)(((float)deletedYellow/totalYellow)*100)*100.0) / 100.0);
+		  truncatedBrown = (System.Math.Truncate((double)(((float)deletedBrown/totalBrown)*100)*100.0) / 100.0);
+		  truncatedBlack = (System.Math.Truncate((double)(((float)deletedBlack/totalBlack)*100)*100.0) / 100.0);
+		  truncatedWhite = (System.Math.Truncate((double)(((float)deletedWhite/totalWhite)*100)*100.0) / 100.0);
+		  
+		  GUI.Label(new Rect(0,0,100,100), ("Yellow: " + truncatedYellow.ToString() + "%  Brown: " + truncatedBrown.ToString() + "%  Black: " + truncatedBlack + "%  White: " + truncatedWhite + "%"));
+		  
+		  if(GUI.Button(new Rect(425,320,50,30),"Done")){
+				Application.LoadLevel("scores");
+			}
+				
+		}
 }
