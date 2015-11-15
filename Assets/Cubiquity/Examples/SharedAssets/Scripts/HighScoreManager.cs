@@ -39,17 +39,19 @@
      
      public void SaveHighScore (string name, float yellowScore, float brownScore, float blackScore, float whiteScore)
      {
-         List<Scores> HighScores = new List<Scores> ();
+         Debug.Log(yellowScore);
+		 List<Scores> HighScores = new List<Scores> ();
  
          int i = 1;
-         while (i<=LeaderboardLength && PlayerPrefs.HasKey("HighScore"+i+"score")) {
+         while (i<=LeaderboardLength && PlayerPrefs.HasKey("HighScore"+i+"yellowScore") && PlayerPrefs.HasKey("HighScore"+i+"brownScore") && PlayerPrefs.HasKey("HighScore"+i+"blackScore") && PlayerPrefs.HasKey("HighScore"+i+"whiteScore")) {
              Scores temp = new Scores ();
-             temp.yellowScore = PlayerPrefs.GetFloat ("HighScore" + i + "score");
-			 temp.brownScore = PlayerPrefs.GetFloat ("HighScore" + i + "score");
-			 temp.blackScore = PlayerPrefs.GetFloat ("HighScore" + i + "score");
-			 temp.whiteScore = PlayerPrefs.GetFloat ("HighScore" + i + "score");
+             temp.yellowScore = PlayerPrefs.GetFloat ("HighScore" + i + "yellowScore");
+			 temp.brownScore = PlayerPrefs.GetFloat ("HighScore" + i + "brownScore");
+			 temp.blackScore = PlayerPrefs.GetFloat ("HighScore" + i + "blackScore");
+			 temp.whiteScore = PlayerPrefs.GetFloat ("HighScore" + i + "whiteScore");
              temp.name = PlayerPrefs.GetString ("HighScore" + i + "name");
              HighScores.Add (temp);
+			 Debug.Log("heydo ho" + i + temp.yellowScore);
              i++;
          }
          if (HighScores.Count == 0) {  //if high score table empty, add current score           
@@ -64,8 +66,13 @@
              for (i=1; i<=HighScores.Count && i<=LeaderboardLength; i++) {
 				 if (blackScore > HighScores [i - 1].blackScore) { //if current black score is greater than a high score, insert current score there
                      Scores _temp = new Scores ();
+					 Debug.Log("I'm in blackScore if. high score list: ");
+					 for (int j=0; j<10; j++) {
+						Debug.Log(j + ": " + HighScores [j].yellowScore + "\n");
+					 }
                      _temp.name = name;
                      _temp.yellowScore = yellowScore;
+					 Debug.Log(_temp.yellowScore);
 					 _temp.brownScore = brownScore;
 					 _temp.blackScore = blackScore;
 					 _temp.whiteScore = whiteScore;
@@ -119,11 +126,12 @@
          
          i = 1;
          while (i<=LeaderboardLength && i<=HighScores.Count) {
+			 Debug.Log(HighScores [i - 1].yellowScore + "!");
              PlayerPrefs.SetString ("HighScore" + i + "name", HighScores [i - 1].name);
-             PlayerPrefs.SetFloat ("HighScore" + i + "score", HighScores [i - 1].yellowScore);
-			 PlayerPrefs.SetFloat ("HighScore" + i + "score", HighScores [i - 1].brownScore);
-			 PlayerPrefs.SetFloat ("HighScore" + i + "score", HighScores [i - 1].blackScore);
-			 PlayerPrefs.SetFloat ("HighScore" + i + "score", HighScores [i - 1].whiteScore);
+             PlayerPrefs.SetFloat ("HighScore" + i + "yellowScore", HighScores [i - 1].yellowScore);
+			 PlayerPrefs.SetFloat ("HighScore" + i + "brownScore", HighScores [i - 1].brownScore);
+			 PlayerPrefs.SetFloat ("HighScore" + i + "blackScore", HighScores [i - 1].blackScore);
+			 PlayerPrefs.SetFloat ("HighScore" + i + "whiteScore", HighScores [i - 1].whiteScore);
              i++;
          }
          
@@ -134,12 +142,12 @@
          List<Scores> HighScores = new List<Scores> ();
  
          int i = 1;
-         while (i<=LeaderboardLength && PlayerPrefs.HasKey("HighScore"+i+"score")) {
+         while (i<=LeaderboardLength && PlayerPrefs.HasKey("HighScore"+i+"yellowScore") && PlayerPrefs.HasKey("HighScore"+i+"brownScore") && PlayerPrefs.HasKey("HighScore"+i+"blackScore") && PlayerPrefs.HasKey("HighScore"+i+"whiteScore")) {
              Scores temp = new Scores ();
-             temp.yellowScore = PlayerPrefs.GetFloat ("HighScore" + i + "score");
-			 temp.brownScore = PlayerPrefs.GetFloat ("HighScore" + i + "score");
-			 temp.blackScore = PlayerPrefs.GetFloat ("HighScore" + i + "score");
-			 temp.whiteScore = PlayerPrefs.GetFloat ("HighScore" + i + "score");
+             temp.yellowScore = PlayerPrefs.GetFloat ("HighScore" + i + "yellowScore");
+			 temp.brownScore = PlayerPrefs.GetFloat ("HighScore" + i + "brownScore");
+			 temp.blackScore = PlayerPrefs.GetFloat ("HighScore" + i + "blackScore");
+			 temp.whiteScore = PlayerPrefs.GetFloat ("HighScore" + i + "whiteScore");
              temp.name = PlayerPrefs.GetString ("HighScore" + i + "name");
              HighScores.Add (temp);
              i++;
