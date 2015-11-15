@@ -37,46 +37,93 @@
          DontDestroyOnLoad (gameObject);
      }
      
-     public void SaveHighScore (string name, int score)
+     public void SaveHighScore (string name, float yellowScore, float brownScore, float blackScore, float whiteScore)
      {
          List<Scores> HighScores = new List<Scores> ();
  
          int i = 1;
          while (i<=LeaderboardLength && PlayerPrefs.HasKey("HighScore"+i+"score")) {
              Scores temp = new Scores ();
-             temp.score = PlayerPrefs.GetInt ("HighScore" + i + "score");
+             temp.yellowScore = PlayerPrefs.GetFloat ("HighScore" + i + "score");
+			 temp.brownScore = PlayerPrefs.GetFloat ("HighScore" + i + "score");
+			 temp.blackScore = PlayerPrefs.GetFloat ("HighScore" + i + "score");
+			 temp.whiteScore = PlayerPrefs.GetFloat ("HighScore" + i + "score");
              temp.name = PlayerPrefs.GetString ("HighScore" + i + "name");
              HighScores.Add (temp);
              i++;
          }
-         if (HighScores.Count == 0) {            
+         if (HighScores.Count == 0) {  //if high score table empty, add current score           
              Scores _temp = new Scores ();
              _temp.name = name;
-             _temp.score = score;
+             _temp.yellowScore = yellowScore;
+             _temp.brownScore = brownScore;
+             _temp.blackScore = blackScore;
+             _temp.whiteScore = whiteScore;
              HighScores.Add (_temp);
          } else {
              for (i=1; i<=HighScores.Count && i<=LeaderboardLength; i++) {
-                 if (score > HighScores [i - 1].score) {
+				 if (blackScore > HighScores [i - 1].blackScore) { //if current black score is greater than a high score, insert current score there
+                     Scores _temp = new Scores ();
+                     _temp.name = name;
+                     _temp.yellowScore = yellowScore;
+					 _temp.brownScore = brownScore;
+					 _temp.blackScore = blackScore;
+					 _temp.whiteScore = whiteScore;
+                     HighScores.Insert (i - 1, _temp);
+                     break;
+                 } 
+				 else if (blackScore == HighScores [i - 1].blackScore) { //if black is same, check brown
+                     if (brownScore > HighScores [i - 1].brownScore) { //if current brown score is greater than a high score, insert current score there
+						 Scores _temp = new Scores ();
+						 _temp.name = name;
+						 _temp.yellowScore = yellowScore;
+						 _temp.brownScore = brownScore;
+						 _temp.blackScore = blackScore;
+						 _temp.whiteScore = whiteScore;
+						 HighScores.Insert (i - 1, _temp);
+						 break;
+					} 
+					else if (brownScore == HighScores [i - 1].brownScore) { //if brown is same, check yellow
+						if (yellowScore > HighScores [i - 1].yellowScore) { //if current yellow score is greater than a high score, insert current score there
+						 Scores _temp = new Scores ();
+						 _temp.name = name;
+						 _temp.yellowScore = yellowScore;
+						 _temp.brownScore = brownScore;
+						 _temp.blackScore = blackScore;
+						 _temp.whiteScore = whiteScore;
+						 HighScores.Insert (i - 1, _temp);
+						 break;
+						} 
+					}
+                 } 
+				 /*if (score > HighScores [i - 1].score) { //if current score is greater than a current high score, insert current score there
                      Scores _temp = new Scores ();
                      _temp.name = name;
                      _temp.score = score;
                      HighScores.Insert (i - 1, _temp);
                      break;
-                 }            
-                 if (i == HighScores.Count && i < LeaderboardLength) {
+                 } */
+                 if (i == HighScores.Count && i < LeaderboardLength) { //if high score table not yet full, and if current score isnt higher than any existing scores
                      Scores _temp = new Scores ();
                      _temp.name = name;
-                     _temp.score = score;
+                     _temp.yellowScore = yellowScore;
+					 _temp.brownScore = brownScore;
+					 _temp.blackScore = blackScore;
+					 _temp.whiteScore = whiteScore;
                      HighScores.Add (_temp);
                      break;
                  }
+				 
              }
          }
          
          i = 1;
          while (i<=LeaderboardLength && i<=HighScores.Count) {
              PlayerPrefs.SetString ("HighScore" + i + "name", HighScores [i - 1].name);
-             PlayerPrefs.SetInt ("HighScore" + i + "score", HighScores [i - 1].score);
+             PlayerPrefs.SetFloat ("HighScore" + i + "score", HighScores [i - 1].yellowScore);
+			 PlayerPrefs.SetFloat ("HighScore" + i + "score", HighScores [i - 1].brownScore);
+			 PlayerPrefs.SetFloat ("HighScore" + i + "score", HighScores [i - 1].blackScore);
+			 PlayerPrefs.SetFloat ("HighScore" + i + "score", HighScores [i - 1].whiteScore);
              i++;
          }
          
@@ -89,7 +136,10 @@
          int i = 1;
          while (i<=LeaderboardLength && PlayerPrefs.HasKey("HighScore"+i+"score")) {
              Scores temp = new Scores ();
-             temp.score = PlayerPrefs.GetInt ("HighScore" + i + "score");
+             temp.yellowScore = PlayerPrefs.GetFloat ("HighScore" + i + "score");
+			 temp.brownScore = PlayerPrefs.GetFloat ("HighScore" + i + "score");
+			 temp.blackScore = PlayerPrefs.GetFloat ("HighScore" + i + "score");
+			 temp.whiteScore = PlayerPrefs.GetFloat ("HighScore" + i + "score");
              temp.name = PlayerPrefs.GetString ("HighScore" + i + "name");
              HighScores.Add (temp);
              i++;
@@ -107,6 +157,9 @@
          {
              PlayerPrefs.DeleteKey("HighScore" + i + "name");
              PlayerPrefs.DeleteKey("HighScore" + i + "score");
+             PlayerPrefs.DeleteKey("HighScore" + i + "score");
+             PlayerPrefs.DeleteKey("HighScore" + i + "score");
+             PlayerPrefs.DeleteKey("HighScore" + i + "score");
          }
      }
      
@@ -118,7 +171,10 @@
  
  public class Scores
  {
-     public int score;
+     public float yellowScore;
+	 public float brownScore;
+	 public float blackScore;
+	 public float whiteScore;
      public string name;
  
  }
