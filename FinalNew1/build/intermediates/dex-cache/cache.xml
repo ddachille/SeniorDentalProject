@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Amanda\Documents\GitHub\SeniorDentalProject\FinalNew1\app\libs\unity-classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c38a8f26ae7384127ce35a824d1d4e9f42e44182">
+        <dex dex="C:\Users\Amanda\Documents\GitHub\SeniorDentalProject\FinalNew1\app\build\intermediates\pre-dexed\debug\unity-classes-66642b38bc467ea4a9547d090ab5ef6af068bc2e.jar" />
+    </item>
+
+</items>
