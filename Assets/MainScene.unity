@@ -126,6 +126,7 @@ GameObject:
   - 92: {fileID: 272831507}
   - 124: {fileID: 272831506}
   - 81: {fileID: 272831505}
+  - 114: {fileID: 272831510}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -199,6 +200,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &272831510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 272831504}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37c0af92e5354d344b016241382028c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 839862259}
+  xSpeed: 240
+  ySpeed: 123
+  yMinLimit: -723
+  yMaxLimit: 877
 --- !u!21 &294118521
 Material:
   serializedVersion: 6
@@ -257,6 +274,7 @@ GameObject:
   - 114: {fileID: 839862257}
   - 114: {fileID: 839862256}
   - 114: {fileID: 839862260}
+  - 114: {fileID: 839862261}
   m_Layer: 0
   m_Name: Colored Cubes Volume
   m_TagString: Untagged
@@ -327,6 +345,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66d62940cbb1af49806d90acf6f298a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &839862261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 839862255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37c0af92e5354d344b016241382028c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 272831509}
+  xSpeed: 240
+  ySpeed: 123
+  yMinLimit: -723
+  yMaxLimit: 877
 --- !u!1 &1975212278
 GameObject:
   m_ObjectHideFlags: 0
