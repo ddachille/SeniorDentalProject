@@ -87,6 +87,51 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &10923156
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 10923157}
+  - 114: {fileID: 10923158}
+  m_Layer: 0
+  m_Name: RotateParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &10923157
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 10923156}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 64, y: 125, z: 61}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 839862259}
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+--- !u!114 &10923158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 10923156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37c0af92e5354d344b016241382028c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 10923157}
+  xSpeed: 30
+  ySpeed: 20
+  yMinLimit: -723
+  yMaxLimit: 877
 --- !u!1 &84429913
 GameObject:
   m_ObjectHideFlags: 0
@@ -113,7 +158,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!1 &272831504
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,7 +171,6 @@ GameObject:
   - 92: {fileID: 272831507}
   - 124: {fileID: 272831506}
   - 81: {fileID: 272831505}
-  - 114: {fileID: 272831510}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -200,22 +244,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &272831510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 272831504}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37c0af92e5354d344b016241382028c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 839862259}
-  xSpeed: 240
-  ySpeed: 123
-  yMinLimit: -723
-  yMaxLimit: 877
 --- !u!21 &294118521
 Material:
   serializedVersion: 6
@@ -274,7 +302,6 @@ GameObject:
   - 114: {fileID: 839862257}
   - 114: {fileID: 839862256}
   - 114: {fileID: 839862260}
-  - 114: {fileID: 839862261}
   m_Layer: 0
   m_Name: Colored Cubes Volume
   m_TagString: Untagged
@@ -329,11 +356,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 839862255}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -64, y: -125, z: -61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 10923157}
+  m_RootOrder: 0
 --- !u!114 &839862260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,22 +372,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66d62940cbb1af49806d90acf6f298a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &839862261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 839862255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37c0af92e5354d344b016241382028c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 272831509}
-  xSpeed: 240
-  ySpeed: 123
-  yMinLimit: -723
-  yMaxLimit: 877
 --- !u!1 &1975212278
 GameObject:
   m_ObjectHideFlags: 0

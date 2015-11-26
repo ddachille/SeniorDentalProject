@@ -8,8 +8,8 @@ public class CameraMovement : MonoBehaviour {
     //public float distance = 20.0f;
     //public float zoomSpd = 2.0f;
  
-    public float xSpeed = 240.0f;
-    public float ySpeed = 123.0f;
+    public float xSpeed = 30.0f;
+    public float ySpeed = 20.0f;
  
     public int yMinLimit = -723;
     public int yMaxLimit = 877;
