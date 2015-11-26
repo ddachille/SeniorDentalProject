@@ -33,9 +33,25 @@ public class CameraMovement : MonoBehaviour {
             y += Input.GetAxis("Vertical") * ySpeed * 0.02f;
  
             y = ClampAngle(y, yMinLimit, yMaxLimit);
+			
+			Debug.Log ("X: "+x+" "+"Y: "+y);
  
 	    //distance -= Input.GetAxis("Fire1") *zoomSpd* 0.02f;
         //    distance += Input.GetAxis("Fire2") *zoomSpd* 0.02f;
+			
+			if(y>=40){
+				y=40;
+			}
+			else if(y<=-30){
+				y=-30;
+			}
+			
+			if(x>=48){
+				x=48;
+			}
+			else if(x<=-48){
+				x=-48;
+			}
  
             Quaternion rotation = Quaternion.Euler(y, x, 0.0f);
             //Vector3 position = rotation * new Vector3(0.0f, 0.0f, -distance) + target.position;
